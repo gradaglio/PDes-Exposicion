@@ -36,7 +36,7 @@ class TestMath(unittest.TestCase):
         self.assertNotEqual(potencia(-2, 5), 32)
         self.assertEqual(potencia(-2, 3), -8)
         self.assertEqual(potencia(25, 1), 25)
-        self.assertNotEqual(potencia(2, 5), 32)
+        self.assertEqual(potencia(2, 5), 32)
 
 
 
