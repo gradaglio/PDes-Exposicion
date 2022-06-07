@@ -1,0 +1,10 @@
+language: python
+install: skip
+
+os: linux
+dist: trusty
+python: 3.10
+env: PYTHON=3.10
+
+script:
+  - python -m pytest ./
