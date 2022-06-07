@@ -1,10 +1,10 @@
 language: generic
 install: skip
 
-os: linux
+os: windows
 dist: trusty
-python: 3.10
-env: PYTHON=3.10
+python: 3.6
+env: PYTHON=3.6
 
 script:
   - pip3 install -r requirement.txt
