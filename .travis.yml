@@ -3,8 +3,8 @@ install: skip
 
 os: linux
 dist: trusty
-python: 3.10
-env: PYTHON=3.10
+python: 3.9
+env: PYTHON=3.9
 
 script:
   - python -m pytest ./
