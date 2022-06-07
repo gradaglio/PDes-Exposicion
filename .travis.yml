@@ -10,4 +10,5 @@ script:
   - echo $(python --version)
   - pip3 install -r requirement.txt
   - python -m pytest ./test
+  - bash <(curl -s https://codecov.io/bash)
 
