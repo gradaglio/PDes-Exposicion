@@ -3,8 +3,8 @@ install: skip
 
 os: linux
 dist: trusty
-python: 3.9
-env: PYTHON=3.9
+python: 3.10
+env: PYTHON=3.10
 
 script:
   - pip install -r requirement.txt
