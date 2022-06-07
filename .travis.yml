@@ -1,4 +1,4 @@
-language: python
+language: generic
 install: skip
 
 os: linux
@@ -7,4 +7,4 @@ python: 3.9
 env: PYTHON=3.9
 
 script:
-  - python -m pytest ./
+  - python -m pytest ./test
