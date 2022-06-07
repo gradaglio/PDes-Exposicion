@@ -7,5 +7,7 @@ python: 3.6
 env: PYTHON=3.6
 
 script:
+  - echo $(python --version)
   - pip3 install -r requirement.txt
   - python -m pytest ./test
+
