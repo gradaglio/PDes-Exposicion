@@ -5,7 +5,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest]
+        os: [ubuntu-18.04]
     env:
       OS: ${{ matrix.os }}
       PYTHON: '3.7'
