@@ -10,6 +10,6 @@ script:
   - echo $(python --version)
   - pip3 install -r requirement.txt
   - python -m pytest ./test
-  #- bash <(curl -s https://codecov.io/bash)
-  - curl -X POST --data-binary @codecov.yml https://codecov.io/validate
+  - bash <(curl -s https://codecov.io/bash)
+  #- curl -X POST --data-binary @codecov.yml https://codecov.io/validate
 
