@@ -12,4 +12,4 @@ script:
   - python -m pytest ./test
   - bash <(curl -s https://codecov.io/bash)
   #- curl -X POST --data-binary @codecov.yml https://codecov.io/validate
-  - nosetts app/tests/test.py -v — with-coverage
+
