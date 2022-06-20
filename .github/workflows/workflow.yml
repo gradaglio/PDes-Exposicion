@@ -54,7 +54,7 @@ jobs:
       - name: Install dependencys
          run: pip install -r requirements.txt
       - name: Initial test
-         run: pytest --cov ./test/test_prueba.py --cov-report=xml
+         run: pytest --cov ./test/test_prueba.py #--cov-report=xml
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
