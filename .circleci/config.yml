@@ -4,7 +4,7 @@ orbs:
   codecov: codecov/codecov@3
 
 jobs:
-  test-api:
+  build:
     docker:
       - image: cimg/python:3.10.2
     steps:
@@ -21,4 +21,4 @@ workflows:
   version: 2.1
   build-test:
     jobs:
-      - build-test
+      - build
