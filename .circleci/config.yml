@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  codecov: codecov/codecov@3.2.2
+  codecov: codecov/codecov@3
 
 jobs:
   test-api:
@@ -14,11 +14,11 @@ jobs:
           command: pip install -r api/requirements.txt
       - run:
           name: Run tests and collect coverage
-          command: pytest --cov api/
+          command: pytest --cov ./test/test_prueba.py --cov-report=xml
       - codecov/upload
 
 workflows:
   version: 2.1
   build-test:
     jobs:
-      - test-api
+      - build
