@@ -1,3 +1,4 @@
+"""
 name: Example workflow for Codecov
 on: [push]
 
@@ -9,13 +10,13 @@ jobs:
         os: [ubuntu-18.04]
     env:
       OS: ${{ matrix.os }}
-      PYTHON: '3.7'
+      PYTHON: '3.10'
     steps:
     - uses: actions/checkout@master
     - name: Setup Python
       uses: actions/setup-python@master
       with:
-        python-version: 3.7
+        python-version: 3.10
     - name: Generate coverage report
       run: |
         pip install pytest
@@ -26,7 +27,7 @@ jobs:
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         #token: 60199a6b-7d48-456d-99db-1c97ce389797
-        version: "v0.1.15"
+        version: 'v0.1.15'
         directory: ./coverage/reports/
         env_vars: OS,PYTHON
         fail_ci_if_error: true
@@ -35,4 +36,38 @@ jobs:
         flags: unittests
         name: codecov-umbrella
         path_to_write_report: ./coverage/codecov_report.txt
-        verbose: true
+        verbose: true.
+"""
+name: Example workflow for Codecov
+on: [push]
+
+jobs:
+  run:
+    runs-on: ubuntu-lastest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+      - name: Install dependencys
+         run: pip install -r requirements.txt
+      - name: Initial test
+         run: pytest ./test/test_prueba.py --cov=./ --cov-report=xml
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          #token: 60199a6b-7d48-456d-99db-1c97ce389797
+          version: 'v0.1.15'
+          directory: ./coverage/reports/
+          env_vars: OS,PYTHON
+          fail_ci_if_error: true
+          files: ./coverage1.xml,./coverage2.xml
+          #files: ./coverage1.out,./coverage2.out
+          flags: unittests
+          name: codecov-umbrella
+          path_to_write_report: ./coverage/codecov_report.txt
+          verbose: true.
+
