@@ -44,12 +44,12 @@ on: [push]
 jobs:
   run:
     runs-on: ubuntu-lastest
-      strategy:
-        matrix:
-          os: [ ubuntu-18.04 ]
-      env:
-        OS: ${{ matrix.os }}
-        PYTHON: '3.10'
+    strategy:
+      matrix:
+        os: [ ubuntu-18.04 ]
+    env:
+      OS: ${{ matrix.os }}
+      PYTHON: '3.10'
     steps:
       - name: Checkout
         uses: actions/checkout@master
