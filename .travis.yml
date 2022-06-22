@@ -1,15 +1,7 @@
-language: python
-install: skip
-
-os: linux
-dist: trusty
-python: 3.6
-env: PYTHON=3.6
-
+language: java
+jdk:
+  - openjdk8
 script:
-  - echo $(python --version)
-  - pip3 install -r requirement.txt
-  - python -m pytest ./test
+  - mvn -B test
   - bash <(curl -s https://codecov.io/bash)
-  #- curl -X POST --data-binary @codecov.yml https://codecov.io/validate
 
