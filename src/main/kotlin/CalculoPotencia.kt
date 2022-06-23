@@ -1,5 +1,5 @@
 
-class Calculo {
+class CalculoPotencia {
     companion object {
         fun potencia(numero1: Int, numero2: Int): Any {
             var res = 1
@@ -15,22 +15,7 @@ class Calculo {
             }
         }
 
-        fun factorial(numero: Int): Any {
-            var res = 1
 
-            if (numero < 1){
-                return "Debe ser mayor a 0"
-            } else {
-                res = calculoFactorial(numero)
-            }
-            return (res)
-        }
-
-        fun calculoFactorial(numero: Int): Int {
-            var factorial = 1
-            for (i in 1..numero) factorial *= i
-            return (factorial)
-        }
     }
 }
 

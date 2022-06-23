@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test
 
 
 
-class CalculoKtTest(){
+class CalculoPotenciaKtTest(){
 
 
     @Before
@@ -34,23 +34,6 @@ class CalculoKtTest(){
 
         Assert.assertEquals("La potencia debe ser un número mayor o igual a 0", CalculoPotencia.potencia(2,-1))
     }
-
-
-    @Test
-    fun `El factorial de 4 es 24`(){
-        Assert.assertEquals(24, CalculoPotencia.factorial(4))
-    }
-
-    @Test
-    fun `El factorial de un número negativo no es posible`(){
-        Assert.assertEquals("Debe ser mayor a 0", CalculoPotencia.factorial(-1))
-    }
-
-    @Test
-    fun `El factorial de 2 es 2`(){
-        Assert.assertEquals(2, CalculoPotencia.calculoFactorial(2))
-    }
-
 
 }
 
