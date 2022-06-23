@@ -37,7 +37,7 @@ jobs:
         name: codecov-umbrella
         path_to_write_report: ./coverage/codecov_report.txt
         verbose: true.
-"""
+
 name: Example workflow for Codecov
 on: [push, pull_request]
 
@@ -72,3 +72,4 @@ jobs:
           path_to_write_report: ./coverage/codecov_report.txt
           verbose: true.
 
+"""
