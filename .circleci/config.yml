@@ -1,27 +1,32 @@
 version: 2.1
 
-orbs:
-  android: circleci/android@1.0.3
-
+# Define the jobs we want to run for this project
 jobs:
-  build-android:
-    executor: android/android
-
+  build:
+    docker:
+      - image: cimg/kotlin 1.6.21
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - android/restore-build-cache
-      - android/restore-gradle-cache
-      - run:
-          name: Run Android tests
-          command: ./gradlew androidApp:testDebugUnitTest
-      - android/save-gradle-cache
-      - android/save-build-cache
+      - run: echo "this is the build job"
+  test:
+    docker:
+      - image: cimg/kotlin 1.6.21
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    steps:
+      - checkout
+      - run: echo "this is the test job"
 
-
+# Orchestrate our job run sequence
 workflows:
-  build-all:
+  build_and_test:
     jobs:
-      - build-android
+      - build
+      - test
 
 
 
