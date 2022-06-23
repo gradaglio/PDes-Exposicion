@@ -22,6 +22,6 @@ workflows:
   build-all:
     jobs:
       - build-android
-      - build-ios
+
 
 
