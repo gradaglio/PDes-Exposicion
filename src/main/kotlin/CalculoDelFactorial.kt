@@ -1,4 +1,4 @@
-class CalculoFactorial {
+class CalculoDelFactorial {
     companion object {
         fun factorial(numero: Int): Any {
             var res = 1

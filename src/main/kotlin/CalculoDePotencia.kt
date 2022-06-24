@@ -1,5 +1,5 @@
 
-class CalculoPotencia {
+class CalculoDePotencia {
     companion object {
         fun potencia(numero1: Int, numero2: Int): Any {
             var res = 1
